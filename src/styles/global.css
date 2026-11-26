@@ -1,0 +1,72 @@
+@import "./sections/testimonials.css";
+@import "./sections/featured-book.css";
+@import "./sections/featured-org.css";
+@import "./sections/leadership-live.css";
+@import "./sections/footer.css";
+@import "./sections/about-story.css";
+@import "./sections/what-matters.css";
+@import "./sections/stage.css";
+@import "./sections/mission-vision.css";
+@import "./sections/store-books.css";
+@import "./header.css";
+@import "./hero.css";
+@import "./popup.css";
+@import "./newsletter.css";
+@import "./programs.css";
+@import "./events.css";
+@import "./resources.css";
+@import "./pages.css";
+
+:root {
+  --font-sans: "Inter Tight", Arial, Helvetica, sans-serif;
+  --font-serif-it: "Source Serif 4", Georgia, "Times New Roman", serif;
+  --font-display-it: "Instrument Serif", Georgia, "Times New Roman", serif;
+  --black: #050505;
+  --gold: #b89652;
+  /* defaults — overwritten at runtime from Admin → Developer → Theme */
+  --c-primary: #050505;
+  --c-on-primary: #ffffff;
+  --c-secondary: #ffffff;
+  --c-on-secondary: #111111;
+  --c-tertiary: #b89652;
+  --c-quaternary: #224c4a;
+  --c-surface: #f4f4f4;
+  --c-ink: #111111;
+  --btn-bg: #ffffff;
+  --btn-text: #000000;
+  --btn-alt-bg: #000000;
+  --btn-alt-text: #ffffff;
+  --btn-radius: 999px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--c-primary);
+  color: var(--c-on-secondary);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+}
+
+body.no-scroll {
+  overflow: hidden;
+}
+
+/* keep anchor targets clear of the sticky header */
+[id] {
+  scroll-margin-top: 90px;
+}

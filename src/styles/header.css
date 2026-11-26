@@ -1,0 +1,323 @@
+/* =========================================================
+   HEADER — matches the reference: black bar, thin brown top
+   line, logo left, centred nav, white "Subscribe Now" pill
+========================================================= */
+.hdr {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: var(--c-primary);
+  border-top: 4px solid color-mix(in srgb, var(--c-tertiary) 45%, black);
+  color: var(--c-on-primary);
+}
+
+.hdr__inner {
+  max-width: 1340px;
+  margin: 0 auto;
+  height: 72px;
+  padding: 0 24px;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 24px;
+}
+
+.hdr__brand {
+  justify-self: start;
+  color: var(--c-on-primary);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+}
+
+.hdr__wordmark {
+  font-family: var(--font-serif-it);
+  font-style: italic;
+  font-weight: 700;
+  font-size: 26px;
+  letter-spacing: -0.5px;
+  line-height: 1;
+}
+
+.hdr__logo-img {
+  height: 42px;
+  width: auto;
+  display: block;
+  filter: invert(0);
+}
+
+.hdr__nav {
+  display: flex;
+  align-items: center;
+  gap: 34px;
+}
+
+.hdr__item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 72px;
+}
+
+.hdr__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--c-on-primary);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: -0.1px;
+  opacity: 0.92;
+  transition: opacity 0.2s ease;
+}
+
+.hdr__link:hover,
+.hdr__link.active {
+  opacity: 1;
+}
+
+.hdr__link.active {
+  text-decoration: underline;
+  text-underline-offset: 8px;
+  text-decoration-thickness: 1px;
+}
+
+.hdr__caret {
+  margin-top: 1px;
+  transition: transform 0.2s ease;
+}
+
+.hdr__item--has-menu:hover .hdr__caret {
+  transform: rotate(180deg);
+}
+
+.hdr__menu {
+  position: absolute;
+  top: 100%;
+  left: -18px;
+  min-width: 210px;
+  padding: 10px;
+  background: #0d0d0d;
+  border: 1px solid #262626;
+  border-radius: 14px;
+  box-shadow: 0 24px 40px color-mix(in srgb, var(--c-primary) 50%, transparent);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(6px);
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+}
+
+.hdr__item--has-menu:hover .hdr__menu,
+.hdr__item--has-menu:focus-within .hdr__menu {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+}
+
+.hdr__menu a {
+  display: block;
+  padding: 11px 14px;
+  border-radius: 9px;
+  color: var(--c-on-primary);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.hdr__menu a:hover {
+  background: #1b1b1b;
+}
+
+.hdr__cta {
+  justify-self: end;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  height: 36px;
+  padding: 0 26px;
+  border-radius: var(--btn-radius);
+  background: var(--btn-bg);
+  color: var(--btn-text);
+  text-decoration: none;
+  font-size: 12.5px;
+  font-weight: 600;
+  white-space: nowrap;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.hdr__cta:hover {
+  filter: brightness(0.9);
+  transform: translateY(-1px);
+}
+
+/* right-hand tools: subscribe button and menu toggle */
+.hdr__tools {
+  justify-self: end;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* menu toggle — transparent, same size and look as the admin menu toggle */
+.hdr__burger {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  padding: 0;
+  border: 0;
+  border-radius: 10px;
+  background: transparent;
+  color: var(--c-on-primary);
+  font-family: var(--font-sans);
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+}
+.hdr__burger {
+  display: none;
+}
+.hdr__burger:focus-visible {
+  outline: 2px solid var(--c-on-primary);
+  outline-offset: 2px;
+}
+
+/* ---------- slide-out menu: same look and motion as the admin side menu ---------- */
+.mscrim {
+  position: fixed;
+  inset: 0;
+  z-index: 1090;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s, visibility 0s 0.25s;
+}
+.mscrim.is-open {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.25s;
+}
+
+.mside {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1100;
+  width: 250px;
+  height: 100vh;
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  padding: 22px 14px;
+  background: #0b0b0b;
+  color: #fff;
+  font-family: var(--font-sans);
+  transform: translateX(-100%);
+  visibility: hidden;
+  transition: transform 0.25s, visibility 0s 0.25s;
+}
+.mside.is-open {
+  transform: none;
+  visibility: visible;
+  transition: transform 0.25s;
+}
+
+.mside__brand {
+  display: block;
+  padding: 0 10px 22px;
+  color: #fff;
+  text-decoration: none;
+  font: italic 700 26px var(--font-serif-it);
+}
+.mside__brand .hdr__wordmark {
+  font-size: 26px;
+}
+.mside__brand .hdr__logo-img {
+  height: 36px;
+}
+
+.mside nav {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  flex: 1;
+  overflow-y: auto;
+}
+.mside__group {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.mside__group + .mside__group {
+  margin-top: 18px;
+  padding-top: 14px;
+  border-top: 1px solid #222;
+}
+.mside__title {
+  padding: 0 12px 6px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #8a8a8a;
+}
+.mside__link {
+  padding: 10px 12px;
+  border-radius: 10px;
+  color: #cfcfcf;
+  text-decoration: none;
+  font-size: 14.5px;
+  font-weight: 500;
+}
+.mside__link:hover {
+  background: #1a1a1a;
+  color: #fff;
+}
+.mside__link.active {
+  background: #fff;
+  color: #000;
+}
+
+.mside__foot {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 14px 10px 0;
+  border-top: 1px solid #222;
+  font-size: 14px;
+}
+.mside__cta {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 4px;
+  padding: 12px 18px;
+  border-radius: var(--btn-radius);
+  background: var(--btn-bg);
+  color: var(--btn-text);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+@media (max-width: 1060px) {
+  .hdr__inner {
+    grid-template-columns: 1fr auto;
+    height: 64px;
+  }
+  .hdr__nav,
+  .hdr__cta {
+    display: none;
+  }
+  .hdr__burger {
+    display: flex;
+  }
+}
+
+@media (min-width: 1061px) {
+  .mside,
+  .mscrim {
+    display: none;
+  }
+}

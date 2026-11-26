@@ -1,0 +1,237 @@
+/* =========================================================
+   HERO — reference layout
+   black background · left text · right portrait
+   No signature / scribble graphic behind the image.
+========================================================= */
+.hero {
+  position: relative;
+  background: var(--c-primary);
+  color: var(--c-on-primary);
+  overflow: hidden;
+  min-height: clamp(560px, calc(100vh - 76px), 720px);
+  display: flex;
+}
+
+.hero__inner {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  max-width: 1340px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
+  align-items: center;
+}
+
+.hero__copy {
+  position: relative;
+  z-index: 5;
+  max-width: 700px;
+  padding: 80px 0 64px;
+}
+
+.hero__title {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: clamp(40px, 3.65vw, 64px);
+  line-height: 1.04;
+  letter-spacing: -0.025em;
+  color: var(--c-on-primary);
+}
+
+.hero__title em {
+  font-family: var(--font-serif-it);
+  font-style: italic;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  padding-right: 0.05em;
+}
+
+.hero__desc {
+  max-width: 660px;
+  margin: 20px 0 0;
+  font-size: clamp(16px, 1.15vw, 18.5px);
+  line-height: 1.45;
+  letter-spacing: -0.1px;
+  color: var(--c-on-primary);
+}
+
+.hero__buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 28px;
+}
+
+.hero__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 40px;
+  padding: 0 38px;
+  border-radius: var(--btn-radius);
+  background: var(--btn-bg);
+  color: var(--btn-text);
+  font-size: 14.5px;
+  font-weight: 500;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: transform 0.25s ease, background 0.25s ease;
+}
+
+.hero__btn:hover {
+  filter: brightness(0.9);
+  transform: translateY(-2px);
+}
+
+/* ---------- cut-out portrait (home) ---------- */
+.hero__visual {
+  position: relative;
+  align-self: stretch;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-top: 40px;
+}
+
+.hero__person {
+  display: block;
+  height: 100%;
+  max-height: 680px;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+  object-position: center bottom;
+  filter: grayscale(1) contrast(1.06);
+}
+
+/* ---------- blended photo (inner pages) ---------- */
+.hero__bg {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 64%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  filter: grayscale(1) contrast(1.05);
+}
+
+.hero__bg::before,
+.hero__bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+
+/* image fades into the black on the left … */
+.hero__bg::before {
+  background: linear-gradient(
+    90deg,
+    var(--c-primary) 0%,
+    color-mix(in srgb, var(--c-primary) 97%, transparent) 8%,
+    color-mix(in srgb, var(--c-primary) 82%, transparent) 22%,
+    color-mix(in srgb, var(--c-primary) 50%, transparent) 38%,
+    color-mix(in srgb, var(--c-primary) 16%, transparent) 56%,
+    transparent 100%
+  );
+}
+
+/* … and at the top and bottom edges */
+.hero__bg::after {
+  background: linear-gradient(
+    180deg,
+    var(--c-primary) 0%,
+    transparent 14%,
+    transparent 78%,
+    var(--c-primary) 100%
+  );
+}
+
+.hero--blend .hero__inner {
+  grid-template-columns: 1fr;
+}
+
+.hero--blend .hero__copy {
+  max-width: 640px;
+}
+
+/* ---------- tablet ---------- */
+@media (max-width: 960px) {
+  .hero {
+    min-height: 600px;
+  }
+  .hero__inner {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* ---------- mobile ---------- */
+@media (max-width: 720px) {
+  .hero {
+    min-height: 0;
+    display: block;
+  }
+
+  .hero__inner {
+    display: flex;
+    flex-direction: column;
+    padding: 0 22px;
+  }
+
+  .hero__copy {
+    padding: 44px 0 10px;
+  }
+
+  .hero__title {
+    font-size: clamp(38px, 11vw, 52px);
+  }
+
+  .hero__buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero__btn {
+    width: 100%;
+  }
+
+  /* cut-out: portrait sits under the text */
+  .hero__visual {
+    min-height: 420px;
+    padding-top: 10px;
+  }
+  .hero__person {
+    max-height: 460px;
+  }
+
+  /* blended photo becomes a faded banner above the text */
+  .hero--blend {
+    padding-bottom: 36px;
+  }
+  .hero__bg {
+    width: 100%;
+    height: 430px;
+    bottom: auto;
+    background-position: 62% 8% !important;
+  }
+  .hero__bg::before {
+    background: linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--c-primary) 5%, transparent) 0%,
+      color-mix(in srgb, var(--c-primary) 20%, transparent) 35%,
+      color-mix(in srgb, var(--c-primary) 80%, transparent) 78%,
+      var(--c-primary) 100%
+    );
+  }
+  .hero__bg::after {
+    display: none;
+  }
+  .hero--blend .hero__copy {
+    padding-top: 320px;
+  }
+}

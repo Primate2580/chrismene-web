@@ -1,0 +1,136 @@
+/* =========================================================
+   DARK MODE  —  html[data-mode="dark"]
+   The light sections take dark versions of your theme
+   colours (Admin → Developer → Theme & buttons), so changing
+   the theme there still changes dark mode too.
+========================================================= */
+html[data-mode="dark"] {
+  color-scheme: dark;
+  /* "light" sections become dark; the primary (already dark) stays as it is */
+  --c-secondary: color-mix(in srgb, var(--c-primary) 90%, white) !important;
+  --c-on-secondary: var(--c-on-primary) !important;
+  --c-surface: color-mix(in srgb, var(--c-primary) 82%, white) !important;
+  --c-ink: var(--c-on-primary) !important;
+  /* buttons that sat on light sections now sit on dark ones */
+  --btn-alt-bg: var(--btn-bg) !important;
+  --btn-alt-text: var(--btn-text) !important;
+  /* helpers used below */
+  --dm-text: var(--c-on-primary);
+  --dm-muted: color-mix(in srgb, var(--c-on-primary) 70%, transparent);
+  --dm-faint: color-mix(in srgb, var(--c-on-primary) 14%, transparent);
+}
+
+/* ---------- sections that had a hard-coded white background ---------- */
+html[data-mode="dark"] .cm-about2,
+html[data-mode="dark"] .cm-stage-section,
+html[data-mode="dark"] .cm-books-section,
+html[data-mode="dark"] .pg-books,
+html[data-mode="dark"] .pg-live {
+  background: var(--c-secondary);
+  color: var(--dm-text);
+}
+
+/* ---------- text colours that were fixed greys / near-blacks ---------- */
+html[data-mode="dark"] .cm-about2__heading,
+html[data-mode="dark"] .cm-about2__intro,
+html[data-mode="dark"] .pg-books-text,
+html[data-mode="dark"] .pg-books-list li,
+html[data-mode="dark"] .art__body,
+html[data-mode="dark"] .art__lead,
+html[data-mode="dark"] .cm-book-title {
+  color: var(--dm-text);
+}
+html[data-mode="dark"] .cm-about2__text,
+html[data-mode="dark"] .cm-stage-description,
+html[data-mode="dark"] .cm-book-description,
+html[data-mode="dark"] .vcard__desc,
+html[data-mode="dark"] .aud__body p,
+html[data-mode="dark"] .art__back {
+  color: var(--dm-muted);
+}
+html[data-mode="dark"] .cm-book-number,
+html[data-mode="dark"] .cm-book-meta,
+html[data-mode="dark"] .rsec__empty,
+html[data-mode="dark"] .aud__body small,
+html[data-mode="dark"] .art__meta {
+  color: color-mix(in srgb, var(--c-on-primary) 55%, transparent);
+}
+html[data-mode="dark"] .art__back:hover {
+  color: var(--dm-text);
+}
+html[data-mode="dark"] .cm-about2__label,
+html[data-mode="dark"] .cm-stage-eyebrow {
+  color: color-mix(in srgb, var(--c-quaternary) 45%, white);
+}
+html[data-mode="dark"] .pg-live-sub {
+  color: var(--c-tertiary);
+}
+
+/* ---------- lines, cards and small controls ---------- */
+html[data-mode="dark"] .cm-about2__divider {
+  background: var(--dm-faint);
+}
+html[data-mode="dark"] .cm-about2__gallery-item {
+  background: #2a2a2a;
+}
+html[data-mode="dark"] .cm-about2__arrow {
+  background: var(--c-secondary);
+  color: var(--dm-text);
+  border-color: color-mix(in srgb, var(--c-on-primary) 30%, transparent);
+}
+html[data-mode="dark"] .cm-about2__arrow:hover {
+  background: var(--c-quaternary);
+  color: #fff;
+}
+html[data-mode="dark"] .acard,
+html[data-mode="dark"] .aud {
+  box-shadow: 0 2px 14px rgba(0, 0, 0, 0.45);
+  border: 1px solid var(--dm-faint);
+}
+
+/* ---------- things that used the ink colour as a dark backdrop ---------- */
+html[data-mode="dark"] .vcard__media,
+html[data-mode="dark"] .rvideo {
+  background: #000;
+}
+html[data-mode="dark"] .acover__rule {
+  background: #fff;
+}
+html[data-mode="dark"] .pcard__shade {
+  background: linear-gradient(to top, #000 0%, rgba(0, 0, 0, 0.78) 16%, rgba(0, 0, 0, 0.2) 40%, transparent 58%);
+}
+
+/* ---------- white circles / chips that hold a dark symbol ---------- */
+html[data-mode="dark"] .cm-stage-arrow,
+html[data-mode="dark"] .pg-live-socials a.ig {
+  color: #111;
+}
+html[data-mode="dark"] .cm-stage-play::before {
+  border-left-color: #111;
+}
+html[data-mode="dark"] .pg-books-viewall:hover,
+html[data-mode="dark"] .cm-books-view-all:hover {
+  color: var(--c-secondary);
+}
+
+/* ---------- forms ---------- */
+html[data-mode="dark"] .contact input,
+html[data-mode="dark"] .contact textarea {
+  background: color-mix(in srgb, var(--c-on-primary) 6%, transparent);
+  border-color: color-mix(in srgb, var(--c-on-primary) 28%, transparent);
+  color: var(--dm-text);
+}
+html[data-mode="dark"] .contact__msg--ok {
+  color: #7dd68f;
+}
+html[data-mode="dark"] .contact__msg--error {
+  color: #ff9d9d;
+}
+
+/* ---------- custom sections added in the admin (Page layout) ---------- */
+html[data-mode="dark"] .cmx__pic {
+  background: rgba(255, 255, 255, 0.08);
+}
+html[data-mode="dark"] .cmx--custom-light .cmx__pic {
+  background: rgba(0, 0, 0, 0.08);
+}

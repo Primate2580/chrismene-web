@@ -1,0 +1,274 @@
+{
+  "settings": {
+    "theme": {
+      "primary": "#050505",
+      "onPrimary": "#ffffff",
+      "secondary": "#ffffff",
+      "onSecondary": "#111111",
+      "tertiary": "#b89652",
+      "quaternary": "#224c4a",
+      "surface": "#f4f4f4",
+      "ink": "#111111",
+      "buttonBg": "#ffffff",
+      "buttonText": "#000000",
+      "buttonAltBg": "#000000",
+      "buttonAltText": "#ffffff",
+      "buttonRadius": "999px"
+    },
+    "content": {
+      "foot.copy": "Chris Sola Mene. All Rights Reserved. Design by Primeswitch"
+    },
+    "siteName": "Chris Mene",
+    "logoUrl": "",
+    "images": {
+      "hero": "https://chrismene.org/wp-content/uploads/2026/09/11-1.webp",
+      "innerHero": "https://chrismene.org/wp-content/uploads/2026/09/Gemini_Generated_Image_914hlv914hlv914h.jpg",
+      "newsletter": "https://chrismene.org/wp-content/uploads/2026/09/Gemini_Generated_Image_3qanii3qanii3qan.webp",
+      "programsBg": "",
+      "aboutPortrait": "https://chrismene.org/wp-content/uploads/2026/09/PRI_0274__1_-removebg-preview.png",
+      "stage": "",
+      "gallery": []
+    },
+    "newsletter": {
+      "text": "Sign up for leadership insights, spiritual growth content, and program updates from Pastor Chris.",
+      "focus": "70% 12%"
+    },
+    "popup": {
+      "enabled": true,
+      "image": "http://localhost:5173/uploads/1795037105618-bda104-pcsm.jpg",
+      "title": "Leadership *Live* with Chris Mene",
+      "subtitle": "Let's discuss all things leadership and more…",
+      "buttonText": "Join the live broadcast now",
+      "buttonLink": "/platforms",
+      "delay": 800,
+      "frequency": "session"
+    },
+    "programs": [
+      {
+        "title": "Chris Mene\nMastermind",
+        "image": "https://chrismene.org/wp-content/uploads/2026/09/11-1.webp",
+        "description": "A close circle of leaders working through vision, strategy and personal growth together.",
+        "link": "/programs"
+      },
+      {
+        "title": "Leadership\nDevelopment",
+        "image": "https://chrismene.org/wp-content/uploads/2026/09/PRI_0278.webp",
+        "description": "Practical coaching and training that turns leadership principles into daily practice.",
+        "link": "/programs"
+      },
+      {
+        "title": "Personal\nTransformation",
+        "image": "https://chrismene.org/wp-content/uploads/2026/09/Gemini_Generated_Image_wdke7cwdke7cwdke.webp",
+        "description": "A guided journey of faith, purpose and mindset change for people ready to grow.",
+        "link": "/programs"
+      }
+    ]
+  },
+  "subscribers": [],
+  "messages": [],
+  "articles": [
+    {
+      "id": "626e39177b2e",
+      "createdAt": "2026-11-17T08:45:04.022Z",
+      "title": "Why Leaders Hit a Growth Ceiling and How to Break Through",
+      "excerpt": "The habits that got you here are rarely the ones that take you further.",
+      "body": "Every leader eventually reaches a point where effort alone stops producing growth.\n\n## Name the ceiling\nThe first step is to describe it honestly. Is it a capacity problem, a people problem, or a clarity problem?\n\n## Change the question\nInstead of asking how to work harder, ask what must change in me for the next level to be possible.",
+      "cover": "",
+      "videoUrl": "",
+      "gallery": [],
+      "date": "2026-11-17",
+      "status": "published",
+      "slug": "why-leaders-hit-a-growth-ceiling-and-how-to-break-through"
+    },
+    {
+      "id": "bb68cab7cef1",
+      "createdAt": "2026-11-17T08:45:04.022Z",
+      "title": "To Scale Your Business, You Must Scale Your People",
+      "excerpt": "Systems and strategy matter, but growth is carried by people.",
+      "body": "Organisations grow at the speed of their people.\n\nInvest in the development of the team before you invest in the next campaign.",
+      "cover": "",
+      "videoUrl": "",
+      "gallery": [],
+      "date": "2026-11-17",
+      "status": "published",
+      "slug": "to-scale-your-business-you-must-scale-your-people"
+    },
+    {
+      "id": "739fab45acd1",
+      "createdAt": "2026-11-17T08:45:04.022Z",
+      "title": "Operating Systems Don't Write Themselves",
+      "excerpt": "Clear ways of working do not appear by accident.",
+      "body": "Culture is the operating system of an organisation, and somebody has to write it.\n\nDecide what you want to be true, write it down, and model it every day.",
+      "cover": "",
+      "videoUrl": "",
+      "gallery": [],
+      "date": "2026-11-17",
+      "status": "published",
+      "slug": "operating-systems-dont-write-themselves"
+    }
+  ],
+  "podcasts": [
+    {
+      "id": "92880afde4d2",
+      "createdAt": "2026-11-17T08:45:04.022Z",
+      "title": "Start Before You Are Ready",
+      "description": "",
+      "cover": "",
+      "audioUrl": "",
+      "links": [
+        {
+          "label": "Start Before You Are Ready",
+          "url": "#"
+        }
+      ],
+      "date": "2026-11-17",
+      "status": "published"
+    },
+    {
+      "id": "c002ef55145a",
+      "createdAt": "2026-11-17T08:45:04.022Z",
+      "title": "How to Reprogram Your Mind & Lead Your Family Like a Boss",
+      "description": "",
+      "cover": "",
+      "audioUrl": "",
+      "links": [
+        {
+          "label": "Apple Podcasts",
+          "url": "#"
+        },
+        {
+          "label": "Spotify",
+          "url": "#"
+        },
+        {
+          "label": "Youtube",
+          "url": "#"
+        }
+      ],
+      "date": "2026-11-17",
+      "status": "published"
+    },
+    {
+      "id": "1cfbe0dbfbbe",
+      "createdAt": "2026-11-17T08:45:04.022Z",
+      "title": "The Courage to Make Shifts in Leadership",
+      "description": "",
+      "cover": "",
+      "audioUrl": "",
+      "links": [
+        {
+          "label": "The Courage to Make Shifts in Leadership",
+          "url": "#"
+        }
+      ],
+      "date": "2026-11-17",
+      "status": "published"
+    },
+    {
+      "id": "7c3caaa4056f",
+      "createdAt": "2026-11-17T08:45:04.022Z",
+      "title": "Love, Trust and Influence: Leadership Insights",
+      "description": "",
+      "cover": "",
+      "audioUrl": "",
+      "links": [
+        {
+          "label": "Love, Trust and Influence: Leadership Insights",
+          "url": "#"
+        }
+      ],
+      "date": "2026-11-17",
+      "status": "published"
+    },
+    {
+      "id": "341fb44bd178",
+      "createdAt": "2026-11-17T08:45:04.022Z",
+      "title": "6 Steps to Transform Your Mindset and Elevate Your Leadership",
+      "description": "",
+      "cover": "",
+      "audioUrl": "",
+      "links": [
+        {
+          "label": "6 Steps to Transform Your Mindset and Elevate Your Leadership",
+          "url": "#"
+        }
+      ],
+      "date": "2026-11-17",
+      "status": "published"
+    },
+    {
+      "id": "529ed9043389",
+      "createdAt": "2026-11-17T08:45:04.022Z",
+      "title": "Leadership Secrets: From Self-Doubt to Confidence",
+      "description": "",
+      "cover": "",
+      "audioUrl": "",
+      "links": [
+        {
+          "label": "Leadership Secrets: From Self-Doubt to Confidence",
+          "url": "#"
+        }
+      ],
+      "date": "2026-11-17",
+      "status": "published"
+    },
+    {
+      "id": "b9fec8aedac0",
+      "createdAt": "2026-11-17T08:45:04.022Z",
+      "title": "Talking the Talk: Four Things Every Employer Brand Needs to Say",
+      "description": "",
+      "cover": "",
+      "audioUrl": "",
+      "links": [
+        {
+          "label": "Talking the Talk: Four Things Every Employer Brand Needs to Say",
+          "url": "#"
+        }
+      ],
+      "date": "2026-11-17",
+      "status": "published"
+    },
+    {
+      "id": "bc7047413ec8",
+      "createdAt": "2026-11-17T08:45:04.022Z",
+      "title": "The Visionary Leadership: Empowering Through Uncertainty",
+      "description": "",
+      "cover": "",
+      "audioUrl": "",
+      "links": [
+        {
+          "label": "The Visionary Leadership: Empowering Through Uncertainty",
+          "url": "#"
+        }
+      ],
+      "date": "2026-11-17",
+      "status": "published"
+    }
+  ],
+  "videos": [
+    {
+      "id": "aab2983bcd9f",
+      "createdAt": "2026-11-17T08:45:04.022Z",
+      "title": "Leadership Live — Latest Episode",
+      "description": "Watch the latest conversation on leadership and purposeful living.",
+      "url": "",
+      "thumbnail": "",
+      "date": "2026-11-17",
+      "status": "published"
+    }
+  ],
+  "audio": [],
+  "events": [
+    {
+      "id": "dfd650f2b9af",
+      "createdAt": "2026-11-17T08:45:04.022Z",
+      "title": "The SHIFT\nConference",
+      "date": "2026-12-06",
+      "image": "",
+      "image2": "",
+      "badge": "SHIFT",
+      "link": "/events",
+      "status": "published"
+    }
+  ]
+}

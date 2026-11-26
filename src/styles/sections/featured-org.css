@@ -1,0 +1,240 @@
+
+  .pg-feat {
+    position: relative;
+    width: 100%;
+    min-height: 620px;
+    background: #1a1a1a;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+  }
+
+  /*
+    ================================
+    ⭐ ALTERED HERE — BACKGROUND IMAGE
+    ================================
+
+    1. Removed the 222x300 thumbnail.
+    2. Using the full-size original image.
+    3. Removed the heavy grayscale filter.
+    4. Added only a very light grayscale effect.
+  */
+
+  .pg-feat .bgimg {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    height: 100%;
+    width: 65%;
+
+    background-image: url(
+      'https://chrismene.org/wp-content/uploads/2026/09/11-1.webp'
+    );
+
+   background-position: center top;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    /*
+      ⭐ ALTERED HERE
+
+      Previously:
+      filter: grayscale(90%);
+
+      Now the image remains much clearer
+      and more natural.
+    */
+
+    filter: grayscale(15%);
+  }
+
+
+  /*
+    ================================
+    ⭐ ALTERED HERE — IMAGE OVERLAY
+    ================================
+
+    The old overlay was quite dark.
+
+    This version allows more of the
+    photograph to remain visible while
+    still keeping the white logos readable.
+  */
+
+  .pg-feat .overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+      linear-gradient(
+        90deg,
+        #1a1a1a 0%,
+        #1a1a1a 24%,
+        rgba(26, 26, 26, 0.78) 45%,
+        rgba(26, 26, 26, 0.35) 65%,
+        rgba(26, 26, 26, 0) 88%
+      );
+  }
+  
+
+
+  /*
+    ================================
+    LOGOS
+    ================================
+  */
+
+  .pg-feat .logos {
+    position: relative;
+    z-index: 2;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+
+    gap: 48px;
+
+    padding: 60px 60px;
+
+    width: 100%;
+  }
+
+
+  .pg-feat .logos img {
+    height: 34px;
+    width: auto;
+
+    filter: brightness(0) invert(1);
+    opacity: 0.95;
+  }
+
+
+  .pg-feat .logo-text {
+    color: #fff;
+    font-weight: 700;
+    white-space: nowrap;
+
+    /*
+      Small shadow helps the logos remain
+      visible over the photograph.
+    */
+    text-shadow:
+      0 2px 8px rgba(0, 0, 0, 0.45);
+  }
+
+
+  .pg-feat .logo-forbes {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 34px;
+  }
+
+
+  .pg-feat .logo-horasis {
+    font-family: Georgia, serif;
+  }
+
+
+  .pg-feat .logo-horasis .h1 {
+    font-size: 28px;
+    line-height: 1;
+  }
+
+
+  .pg-feat .logo-horasis .h2 {
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    opacity: 0.85;
+    margin-top: 2px;
+  }
+
+
+  .pg-feat .logo-wef {
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    text-align: center;
+    line-height: 1.15;
+
+    border: 1px solid #fff;
+    border-radius: 50%;
+
+    width: 78px;
+    height: 78px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    letter-spacing: 0.5px;
+  }
+
+
+  .pg-feat .logo-guardian {
+    font-family: Georgia, serif;
+    font-size: 30px;
+    font-style: italic;
+    font-weight: 700;
+  }
+
+
+  /*
+    ================================
+    TABLET / MOBILE
+    ================================
+  */
+
+  @media (max-width: 768px) {
+
+    .pg-feat {
+      min-height: auto;
+      padding: 40px 0;
+
+      /*
+        ⭐ ALTERED HERE
+
+        Keeps the image visible on mobile.
+      */
+      display: block;
+    }
+
+
+    .pg-feat .bgimg {
+      position: relative;
+
+      width: 100%;
+      height: 360px;
+
+      /*
+        ⭐ ALTERED HERE
+
+        Center the important part of the
+        photograph on smaller screens.
+      */
+      background-position: center top;
+    }
+
+
+    .pg-feat .overlay {
+      /*
+        ⭐ ALTERED HERE
+
+        Softer mobile overlay so the photo
+        doesn't become unnecessarily dark.
+      */
+      background:
+        linear-gradient(
+          180deg,
+          rgba(26, 26, 26, 0.05) 0%,
+          rgba(26, 26, 26, 0.25) 60%,
+          #1a1a1a 100%
+        );
+    }
+
+
+    .pg-feat .logos {
+      padding: 32px 24px;
+      gap: 28px;
+    }
+  }

@@ -1,0 +1,556 @@
+
+
+/* =========================================================
+   CHRIS MENE — FEATURED BOOKS
+========================================================= */
+
+.cm-books-section,
+.cm-books-section * {
+  box-sizing: border-box;
+}
+
+
+.cm-books-section {
+  width: 100%;
+
+  background: #ffffff;
+
+  color: var(--c-ink);
+
+  padding:
+    90px 60px;
+
+  font-family: var(--font-sans);
+}
+
+
+.cm-books-container {
+  width: 100%;
+
+  max-width: 1400px;
+
+  margin: 0 auto;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.cm-books-header {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 30px;
+
+  margin-bottom: 55px;
+}
+
+
+.cm-books-heading {
+  margin: 0;
+
+  font-size: 52px;
+
+  line-height: 1.1;
+
+  font-weight: 400;
+
+  letter-spacing: -.035em;
+}
+
+
+.cm-books-heading em {
+  font-style: italic;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+}
+
+
+.cm-books-view-all {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  padding:
+    13px 24px;
+
+  border:
+    1.5px solid var(--c-ink);
+
+  border-radius: 40px;
+
+  color: var(--c-ink);
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  text-decoration: none !important;
+
+  white-space: nowrap;
+
+  transition:
+    background .25s ease,
+    color .25s ease;
+}
+
+
+.cm-books-view-all:hover {
+  background: var(--c-ink);
+
+  color: #ffffff;
+
+  text-decoration: none !important;
+}
+
+
+/* =========================================================
+   GRID
+========================================================= */
+
+.cm-books-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  column-gap: 30px;
+
+  row-gap: 65px;
+}
+
+
+/* =========================================================
+   BOOK CARD
+========================================================= */
+
+.cm-book-card {
+  width: 100%;
+
+  min-width: 0;
+}
+
+
+/* =========================================================
+   BOOK COVER
+========================================================= */
+
+.cm-book-cover {
+  position: relative;
+
+  width: 100%;
+
+  aspect-ratio: 3 / 4;
+
+  overflow: hidden;
+
+  display: flex;
+
+  align-items: flex-end;
+
+  padding: 30px;
+
+  box-shadow:
+    0 25px 45px -25px rgba(0,0,0,.35);
+
+  transition:
+    transform .35s ease,
+    box-shadow .35s ease;
+}
+
+
+.cm-book-card:hover .cm-book-cover {
+  transform:
+    translateY(-6px);
+
+  box-shadow:
+    0 35px 55px -25px rgba(0,0,0,.45);
+}
+
+
+/* =========================================================
+   DIFFERENT BOOK COLORS
+========================================================= */
+
+.cm-book-cover-1 {
+  background:
+    linear-gradient(
+      145deg,
+      #211a38 0%,
+      #4e326d 45%,
+      #b55a70 100%
+    );
+}
+
+
+.cm-book-cover-2 {
+  background:
+    linear-gradient(
+      145deg,
+      #102f35 0%,
+      #24716b 50%,
+      #d0a95c 100%
+    );
+}
+
+
+.cm-book-cover-3 {
+  background:
+    linear-gradient(
+      145deg,
+      #18253d 0%,
+      #28558b 50%,
+      #79a7c7 100%
+    );
+}
+
+
+.cm-book-cover-4 {
+  background:
+    linear-gradient(
+      145deg,
+      #382019 0%,
+      #9a452c 48%,
+      #e4a45e 100%
+    );
+}
+
+
+.cm-book-cover-5 {
+  background:
+    linear-gradient(
+      145deg,
+      #171717 0%,
+      #424242 50%,
+      #a9a9a9 100%
+    );
+}
+
+
+.cm-book-cover-6 {
+  background:
+    linear-gradient(
+      145deg,
+      #26311f 0%,
+      #536c3c 50%,
+      #c1b56c 100%
+    );
+}
+
+
+/* =========================================================
+   BOOK COVER CONTENT
+========================================================= */
+
+.cm-book-cover-content {
+  position: relative;
+
+  z-index: 2;
+
+  width: 100%;
+
+  color: #ffffff;
+}
+
+
+.cm-book-cover-content::before {
+  content: "";
+
+  display: block;
+
+  width: 38px;
+
+  height: 2px;
+
+  margin-bottom: 18px;
+
+  background:
+    rgba(255,255,255,.8);
+}
+
+
+.cm-book-category {
+  display: block;
+
+  margin-bottom: 14px;
+
+  font-size: 10px;
+
+  line-height: 1;
+
+  letter-spacing: .2em;
+
+  font-weight: 600;
+}
+
+
+.cm-book-cover-content h3 {
+  margin: 0;
+
+  max-width: 90%;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: clamp(28px, 3vw, 40px);
+
+  line-height: 1.05;
+
+  font-weight: 400;
+}
+
+
+.cm-book-cover-content p {
+  margin: 18px 0 0;
+
+  font-size: 13px;
+
+  opacity: .8;
+}
+
+
+/* =========================================================
+   BOOK INFORMATION
+========================================================= */
+
+.cm-book-info {
+  position: relative;
+
+  padding-top: 24px;
+}
+
+
+.cm-book-number {
+  display: block;
+
+  margin-bottom: 10px;
+
+  color: #888888;
+
+  font-size: 11px;
+
+  font-weight: 600;
+
+  letter-spacing: .12em;
+}
+
+
+.cm-book-title {
+  margin: 0 0 15px;
+
+  color: var(--c-ink);
+
+  font-size: 24px;
+
+  line-height: 1.25;
+
+  font-weight: 700;
+
+  letter-spacing: -.02em;
+}
+
+
+.cm-book-description {
+  margin: 0 0 18px;
+
+  color: #444444;
+
+  font-size: 14px;
+
+  line-height: 1.7;
+}
+
+
+.cm-book-meta {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 8px;
+
+  margin-bottom: 22px;
+
+  color: #777777;
+
+  font-size: 12px;
+
+  line-height: 1.4;
+}
+
+
+/* =========================================================
+   BUY BUTTON
+========================================================= */
+
+.cm-book-buy {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  padding:
+    14px 24px;
+
+  border-radius: var(--btn-radius);
+
+  background: var(--btn-alt-bg);
+
+  color: var(--btn-alt-text);
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  text-decoration: none !important;
+
+  transition:
+    background .25s ease,
+    transform .25s ease;
+}
+
+
+.cm-book-buy:hover {
+  background: #333333;
+
+  color: #ffffff;
+
+  transform:
+    translateY(-2px);
+
+  text-decoration: none !important;
+}
+
+
+.cm-book-buy span {
+  font-size: 17px;
+
+  line-height: 1;
+
+  transition:
+    transform .25s ease;
+}
+
+
+.cm-book-buy:hover span {
+  transform:
+    translateX(4px);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1050px) {
+
+  .cm-books-section {
+    padding:
+      70px 35px;
+  }
+
+
+  .cm-books-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    column-gap: 25px;
+
+    row-gap: 55px;
+  }
+
+
+  .cm-books-heading {
+    font-size: 44px;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+  .cm-books-section {
+    padding:
+      60px 22px;
+  }
+
+
+  .cm-books-header {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    margin-bottom: 40px;
+  }
+
+
+  .cm-books-heading {
+    font-size: 38px;
+  }
+
+
+  .cm-books-grid {
+    grid-template-columns: 1fr;
+
+    row-gap: 55px;
+  }
+
+
+  .cm-book-cover {
+    aspect-ratio: 3 / 4;
+
+    padding: 28px;
+  }
+
+
+  .cm-book-cover-content h3 {
+    font-size: 34px;
+  }
+
+
+  .cm-book-title {
+    font-size: 22px;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+
+  .cm-books-section {
+    padding:
+      50px 18px;
+  }
+
+
+  .cm-books-heading {
+    font-size: 34px;
+  }
+
+
+  .cm-books-view-all {
+    padding:
+      12px 20px;
+  }
+
+}
+

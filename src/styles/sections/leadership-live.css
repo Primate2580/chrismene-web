@@ -1,0 +1,377 @@
+
+  /* =========================
+     SECTION
+  ========================= */
+
+  .pg-live {
+    background: #fff;
+    color: var(--c-ink);
+    padding: 70px 24px 85px;
+    text-align: center;
+    overflow: hidden;
+  }
+
+  /* =========================
+     MAIN HEADING
+  ========================= */
+
+  .pg-live-heading {
+    font-size: 48px;
+    font-weight: 400;
+    line-height: 1.12;
+    letter-spacing: -1.5px;
+    margin: 0 0 14px;
+  }
+
+  .pg-live-heading em {
+    font-style: italic;
+    font-family: Georgia, "Times New Roman", serif;
+    font-weight: 400;
+  }
+
+  .pg-live-sub {
+    color: #a56a3a;
+    font-size: 15px;
+    line-height: 1.5;
+    margin: 0 0 60px;
+  }
+
+  /* =========================
+     MAIN CARD
+  ========================= */
+
+  .pg-live-card {
+    width: 100%;
+    max-width: 935px;
+    height: 560px;
+    margin: 0 auto;
+
+    position: relative;
+    overflow: hidden;
+
+    border-radius: 28px;
+
+    /*
+      YOUR ORIGINAL / FULL-SIZE IMAGE
+      Do NOT use the -240x300 thumbnail.
+    */
+    background-image:
+      linear-gradient(
+        90deg,
+        rgba(0, 0, 0, 0.72) 0%,
+        rgba(0, 0, 0, 0.52) 42%,
+        rgba(0, 0, 0, 0.20) 75%,
+        rgba(0, 0, 0, 0.28) 100%
+      ),
+      url("https://chrismene.org/wp-content/uploads/2026/09/PRI_0278.webp");
+
+   background-position: center top;
+   background-repeat: no-repeat;
+   background-size: cover;
+
+    /*
+      Keeps the person's face centered while
+      allowing the image to fill the entire card.
+    */
+    background-position: center center ;
+
+    background-repeat: no-repeat;
+
+    box-shadow:
+      0 35px 70px rgba(0, 0, 0, 0.18),
+      0 10px 25px rgba(0, 0, 0, 0.08);
+
+    text-align: left;
+  }
+
+
+  /* =========================
+     CARD CONTENT
+  ========================= */
+
+  .pg-live-inner {
+    position: relative;
+    z-index: 5;
+
+    width: 100%;
+    height: 100%;
+
+    padding: 55px 62px;
+
+    display: flex;
+    align-items: flex-start;
+  }
+
+  /* =========================
+     LEFT CONTENT
+  ========================= */
+
+  .pg-live-left {
+    position: relative;
+    z-index: 8;
+
+    width: 48%;
+
+    padding-top: 48px;
+
+    color: #fff;
+
+    text-shadow:
+      0 2px 8px rgba(0, 0, 0, 0.35);
+  }
+
+  .pg-live-title {
+    font-size: 46px;
+    font-weight: 800;
+    line-height: 0.98;
+    letter-spacing: -2px;
+
+    margin: 0 0 30px;
+  }
+
+  .pg-live-time {
+    font-size: 18px;
+    font-weight: 500;
+
+    margin: 0 0 25px;
+  }
+
+  /* =========================
+     SOCIAL ICONS
+  ========================= */
+
+  .pg-live-socials {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .pg-live-socials a {
+    width: 34px;
+    height: 34px;
+
+    border-radius: 7px;
+
+    background: rgba(0, 0, 0, 0.78);
+    color: #fff;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 15px;
+
+    text-decoration: none;
+
+    transition:
+      transform 0.2s ease,
+      background 0.2s ease,
+      opacity 0.2s ease;
+  }
+
+  .pg-live-socials a:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+    background: #000;
+  }
+
+  /* Instagram */
+  .pg-live-socials a.ig {
+    background: #fff;
+    color: var(--c-ink);
+    border: 1.5px solid #fff;
+  }
+
+  /* =========================
+     CENTER YOUTUBE BUTTON
+  ========================= */
+
+  .pg-live-center {
+    position: relative;
+    z-index: 8;
+
+    width: 25%;
+
+    display: flex;
+    justify-content: center;
+
+    padding-top: 173px;
+  }
+
+  .pg-live-play {
+    width: 88px;
+    height: 62px;
+
+    border-radius: 14px;
+
+    background: #ff0000;
+    color: #fff;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 29px;
+
+    text-decoration: none;
+
+    box-shadow:
+      0 10px 25px rgba(0, 0, 0, 0.35);
+
+    transition:
+      transform 0.2s ease,
+      background 0.2s ease;
+  }
+
+  .pg-live-play:hover {
+    transform: scale(1.05);
+    background: #e60000;
+  }
+
+  .pg-live-play i {
+    margin-left: 4px;
+  }
+
+  /* =========================
+     REMOVE OLD PORTRAIT
+  ========================= */
+
+  .pg-live-photo {
+    display: none;
+  }
+
+  /* =========================
+     PREVIOUS EPISODES
+  ========================= */
+
+  .pg-live-prev {
+    display: flex;
+
+    width: fit-content;
+
+    margin: 50px auto 0;
+
+    padding: 13px 28px;
+
+    border-radius: var(--btn-radius);
+
+    background: var(--btn-alt-bg);
+    color: var(--btn-alt-text);
+
+    font-size: 13px;
+    font-weight: 500;
+
+    text-decoration: none;
+
+    align-items: center;
+    gap: 8px;
+
+    transition:
+      transform 0.2s ease,
+      opacity 0.2s ease;
+  }
+
+  .pg-live-prev:hover {
+    transform: translateY(-2px);
+    opacity: 0.85;
+  }
+
+  /* =========================
+     TABLET
+  ========================= */
+
+  @media (max-width: 900px) {
+
+    .pg-live {
+      padding: 50px 20px 60px;
+    }
+
+    .pg-live-heading {
+      font-size: 34px;
+      letter-spacing: -1px;
+    }
+
+    .pg-live-sub {
+      margin-bottom: 40px;
+    }
+
+    .pg-live-card {
+      height: 600px;
+      border-radius: 24px;
+
+      background-position: center center;
+    }
+
+    .pg-live-inner {
+      height: 100%;
+
+      padding: 40px 30px;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      text-align: center;
+    }
+
+    .pg-live-left {
+      width: 100%;
+      padding-top: 10px;
+    }
+
+    .pg-live-title {
+      font-size: 38px;
+    }
+
+    .pg-live-socials {
+      justify-content: center;
+    }
+
+    .pg-live-center {
+      width: 100%;
+      padding-top: 35px;
+    }
+
+    .pg-live-prev {
+      margin-top: 35px;
+    }
+  }
+
+  /* =========================
+     MOBILE
+  ========================= */
+
+  @media (max-width: 600px) {
+
+    .pg-live-heading {
+      font-size: 30px;
+    }
+
+    .pg-live-sub {
+      font-size: 14px;
+    }
+
+    .pg-live-card {
+      height: 620px;
+
+      background-position: center center;
+    }
+
+    .pg-live-inner {
+      padding: 35px 20px;
+    }
+
+    .pg-live-title {
+      font-size: 34px;
+    }
+
+    .pg-live-time {
+      font-size: 16px;
+    }
+
+    .pg-live-play {
+      width: 78px;
+      height: 55px;
+      font-size: 25px;
+    }
+  }

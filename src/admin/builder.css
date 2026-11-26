@@ -1,0 +1,79 @@
+/* Page layout manager + media library */
+.seg { display: flex; flex-wrap: wrap; gap: 6px; }
+.seg__btn { padding: 8px 12px; border: 1px solid #d1d5db; border-radius: 10px; background: #fff; font: 600 13px var(--font-sans); color: #374151; cursor: pointer; }
+.seg__btn:hover { border-color: #111; }
+.seg__btn.is-on { background: #111; border-color: #111; color: #fff; }
+.range { width: 100%; accent-color: #111; }
+.colorrow { display: flex; gap: 8px; }
+.colorrow input[type="color"] { width: 46px; height: 42px; padding: 2px; border: 1px solid #d1d5db; border-radius: 10px; background: #fff; cursor: pointer; }
+.muted { color: #6b7280; font-size: 14px; }
+
+.imglist { display: flex; flex-wrap: wrap; gap: 12px; align-items: flex-start; }
+.imglist__item { width: 120px; }
+.imglist__item img { display: block; width: 120px; height: 100px; object-fit: cover; border-radius: 10px; border: 1px solid #e5e7eb; }
+.imglist__bar { display: flex; gap: 4px; margin-top: 5px; }
+.imglist__bar button { flex: 1; padding: 4px 0; border: 1px solid #d1d5db; border-radius: 7px; background: #fff; font-size: 12px; cursor: pointer; }
+.imglist__bar button:disabled { opacity: .35; cursor: default; }
+.imglist__add { display: flex; flex-direction: column; gap: 6px; width: 120px; padding-top: 4px; }
+
+.blist { display: grid; gap: 12px; margin-bottom: 16px; }
+.bcard { background: #fff; border: 1px solid #e5e7eb; border-radius: 16px; padding: 14px 16px 0; }
+.bcard--locked { background: #f9fafb; padding-bottom: 14px; }
+.bcard.is-hidden { opacity: .62; border-style: dashed; }
+.bcard__row { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+.bcard__num { flex: none; width: 32px; height: 32px; border-radius: 50%; background: #111; color: #fff; display: flex; align-items: center; justify-content: center; font: 700 13px var(--font-sans); }
+.bcard--locked .bcard__num { background: #9ca3af; }
+.bcard__title { flex: 1 1 200px; min-width: 0; display: flex; flex-direction: column; gap: 2px; }
+.bcard__title strong { font-size: 15px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.bcard__title small { color: #6b7280; font-size: 12.5px; }
+.bcard__btns { display: flex; flex-wrap: wrap; gap: 6px; }
+.insert { display: block; width: 100%; margin-top: 12px; padding: 0; border: 0; background: none; cursor: pointer; height: 22px; position: relative; }
+.insert::before { content: ""; position: absolute; left: 0; right: 0; top: 50%; border-top: 1px dashed #e5e7eb; }
+.insert span { position: relative; padding: 0 12px; background: #fff; color: #9ca3af; font: 600 12px var(--font-sans); opacity: 0; transition: opacity .15s; }
+.insert:hover span, .insert:focus-visible span { opacity: 1; color: #111; }
+@media (hover: none) { .insert span { opacity: 1; } }
+
+.blist__foot { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-bottom: 14px; }
+.blist__spacer { flex: 1; }
+
+.bedit { border-top: 1px solid #e5e7eb; margin-top: 14px; padding: 6px 0 4px; }
+.bgroup { padding: 14px 0; border-bottom: 1px solid #f1f2f4; }
+.bgroup:last-child { border-bottom: 0; }
+.bgroup h4 { margin: 0 0 12px; font-size: 12px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: #6b7280; }
+.pbx-preview { zoom: .45; border: 1px solid #e5e7eb; border-radius: 12px; overflow: hidden; background: #fff; pointer-events: none; max-height: 560px; }
+
+.newpage, .pageset { display: grid; gap: 14px; margin-bottom: 16px; }
+.newpage__btns { display: flex; gap: 8px; }
+.pageset__url { padding: 10px 12px; border-radius: 10px; background: #f3f4f6; font: 500 14px monospace; }
+
+/* pop-ups */
+.modal { position: fixed; inset: 0; z-index: 100; display: flex; align-items: center; justify-content: center; padding: 20px; background: rgba(0,0,0,.5); }
+.modal__box { width: min(860px, 100%); max-height: 88vh; overflow: auto; padding: 22px; border-radius: 18px; background: #fff; color: #111; }
+.modal__head { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 8px; }
+.modal__head h2 { margin: 0; font-size: 20px; }
+.modal__sub { margin: 20px 0 10px; font-size: 13px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: #6b7280; }
+.modal__foot { position: sticky; bottom: -22px; margin: 14px -22px -22px; padding: 14px 22px; background: #fff; border-top: 1px solid #e5e7eb; }
+.addgrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 10px; }
+.addgrid--small { grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); }
+.addcard { display: flex; flex-direction: column; gap: 6px; padding: 14px; border: 1px solid #d1d5db; border-radius: 14px; background: #fff; text-align: left; cursor: pointer; font-family: var(--font-sans); color: #111; }
+.addcard:hover { border-color: #111; background: #fafafa; }
+.addcard strong { font-size: 15px; }
+.addcard span { font-size: 13px; line-height: 1.4; color: #6b7280; }
+.addcard--plain { padding: 11px 14px; }
+
+/* media library */
+.mlib { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 14px; }
+.mlib--pick { grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 10px; }
+.mlib__item { display: flex; flex-direction: column; gap: 6px; padding: 8px; border: 2px solid transparent; border-radius: 14px; background: #fff; text-align: left; font-family: var(--font-sans); color: #111; cursor: pointer; }
+.mlib__item--card { border-color: #e5e7eb; cursor: default; }
+button.mlib__item:hover { border-color: #9ca3af; }
+.mlib__item.is-picked { border-color: #111; }
+.mlib__item img, .mlib__icon { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 9px; background: #f3f4f6; }
+.mlib__icon { display: flex; align-items: center; justify-content: center; font-weight: 600; color: #6b7280; font-size: 13px; }
+.mlib__item > span { font-size: 12.5px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.mlib__item small { color: #6b7280; font-size: 12px; }
+.mlib__actions { display: flex; gap: 6px; flex-wrap: wrap; }
+
+@media (max-width: 900px) {
+  .bcard__btns { width: 100%; }
+}

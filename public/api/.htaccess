@@ -1,0 +1,6 @@
+# Make sure the Authorization header reaches PHP
+RewriteEngine On
+RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+<Files "config.php">
+  Require all denied
+</Files>

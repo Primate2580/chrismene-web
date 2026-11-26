@@ -1,0 +1,341 @@
+
+/* =========================================================
+   CHRIS MENE — WHAT I'M ABOUT
+   Asymmetrical editorial cards (Brand color pass)
+========================================================= */
+
+.cm-about-values,
+.cm-about-values * {
+  box-sizing: border-box;
+}
+
+.cm-about-values {
+  position: relative;
+  width: 100%;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 80px 0;
+  background-color: var(--c-primary);
+  color: #ffffff;
+  overflow: hidden;
+  font-family: var(--font-sans);
+}
+
+.cm-about-values__inner {
+  position: relative;
+  z-index: 2;
+  width: min(1400px, calc(100% - 100px));
+  margin: 0 auto;
+  padding: 130px 0 150px;
+}
+
+.cm-about-values::before {
+  content: "";
+  position: absolute;
+  width: 520px;
+  height: 520px;
+  left: -250px;
+  top: 35%;
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 50%;
+  box-shadow: 0 0 0 70px rgba(255,255,255,0.015), 0 0 0 140px rgba(255,255,255,0.01);
+  pointer-events: none;
+}
+
+.cm-about-values::after {
+  content: "";
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  right: 5%;
+  top: 8%;
+  background: linear-gradient(135deg, rgba(255,255,255,0.08) 1px, transparent 1px);
+  background-size: 16px 16px;
+  opacity: 0.4;
+  transform: rotate(12deg);
+  pointer-events: none;
+}
+
+/* ---------- HEADER (unchanged) ---------- */
+.cm-about-values__header {
+  display: grid;
+  grid-template-columns: 0.75fr 1.25fr;
+  gap: 80px;
+  align-items: end;
+  margin-bottom: 90px;
+}
+.cm-about-values__label {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 0 0 28px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.55);
+}
+.cm-about-values__label::before {
+  content: "";
+  width: 38px;
+  height: 1px;
+  background: rgba(255,255,255,0.55);
+}
+.cm-about-values__heading {
+  margin: 0;
+  font-size: clamp(58px, 7vw, 100px);
+  line-height: 0.9;
+  letter-spacing: -5px;
+  font-weight: 500;
+}
+.cm-about-values__heading em {
+  font-family: Georgia, "Times New Roman", serif;
+  font-style: italic;
+  font-weight: 400;
+}
+.cm-about-values__intro {
+  max-width: 620px;
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.8;
+  color: rgba(255,255,255,0.63);
+}
+
+/* ---------- GRID ---------- */
+.cm-about-values__grid {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr 1.05fr 0.95fr;
+  gap: 18px;
+  align-items: start;
+}
+
+/* ---------- CARD BASE ---------- */
+.cm-value-card {
+  position: relative;
+  min-height: 460px;
+  padding: 38px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 2px;
+  transition: transform 0.45s ease, box-shadow 0.45s ease;
+}
+.cm-value-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 30px 70px rgba(0,0,0,0.28);
+}
+
+/* ---------- CARD BACKGROUNDS (BRAND COLORS) ---------- */
+.cm-value-card:nth-child(1) {
+  margin-top: 35px;
+  min-height: 490px;
+  background:
+    radial-gradient(circle at 90% 10%, rgba(255,255,255,0.14), transparent 30%),
+    var(--c-quaternary); /* brand deep green */
+}
+
+.cm-value-card:nth-child(2) {
+  margin-top: -10px;
+  min-height: 430px;
+  background:
+    radial-gradient(circle at 20% 90%, color-mix(in srgb, var(--c-tertiary) 20%, transparent), transparent 35%),
+    #f4f1ea; /* brand cream */
+  color: #171717;
+}
+
+.cm-value-card:nth-child(3) {
+  margin-top: 70px;
+  min-height: 520px;
+  background: linear-gradient(145deg, #2b2210, #6b5527); /* bronze / gold gradient */
+}
+
+.cm-value-card:nth-child(4) {
+  margin-top: 5px;
+  min-height: 450px;
+  background:
+    radial-gradient(circle at 80% 20%, rgba(255,255,255,0.07), transparent 30%),
+    #0b1211; /* near-black with a faint green tint */
+}
+
+/* ---------- GIANT NUMBER (unchanged) ---------- */
+.cm-value-card__number {
+  position: absolute;
+  top: -35px;
+  right: -5px;
+  font-size: 170px;
+  line-height: 1;
+  font-weight: 800;
+  color: rgba(255,255,255,0.045);
+  pointer-events: none;
+}
+.cm-value-card:nth-child(2) .cm-value-card__number {
+  color: rgba(0,0,0,0.055);
+}
+
+/* ---------- TOP ---------- */
+.cm-value-card__top {
+  position: relative;
+  z-index: 2;
+}
+
+/* ---------- TAG (unchanged) ---------- */
+.cm-value-card__tag {
+  display: inline-flex;
+  padding: 7px 12px;
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 30px;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.65);
+}
+.cm-value-card:nth-child(2) .cm-value-card__tag {
+  border-color: rgba(0,0,0,0.16);
+  color: rgba(0,0,0,0.55);
+}
+
+/* ---------- SYMBOL CIRCLE (BRAND GOLD, unified across cards) ---------- */
+.cm-value-card__symbol {
+  position: absolute;
+  right: 32px;
+  top: 42px;
+  width: 54px;
+  height: 54px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid color-mix(in srgb, var(--c-tertiary) 55%, transparent);
+  background: color-mix(in srgb, var(--c-tertiary) 14%, transparent);
+  border-radius: 50%;
+  font-family: Georgia, serif;
+  font-size: 21px;
+  color: var(--c-tertiary);
+}
+
+/* ---------- TITLE (BRAND COLOR) ---------- */
+.cm-value-card__title {
+  position: relative;
+  z-index: 2;
+  margin: 0 0 20px;
+  max-width: 280px;
+  font-size: clamp(36px, 3vw, 52px);
+  line-height: 0.95;
+  letter-spacing: -2px;
+  font-weight: 500;
+}
+.cm-value-card__title em {
+  font-family: Georgia, "Times New Roman", serif;
+  font-style: italic;
+  font-weight: 400;
+  color: var(--c-tertiary); /* gold on dark cards */
+}
+.cm-value-card:nth-child(2) .cm-value-card__title em {
+  color: var(--c-quaternary); /* deep green on the light cream card for contrast */
+}
+
+/* ---------- DESCRIPTION (unchanged) ---------- */
+.cm-value-card__description {
+  position: relative;
+  z-index: 2;
+  max-width: 310px;
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.75;
+  color: rgba(255,255,255,0.62);
+}
+.cm-value-card:nth-child(2) .cm-value-card__description {
+  color: rgba(0,0,0,0.62);
+}
+
+/* ---------- BOTTOM ---------- */
+.cm-value-card__bottom {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding-top: 35px;
+}
+
+/* ---------- LINE (BRAND GOLD, unified) ---------- */
+.cm-value-card__line {
+  width: 55px;
+  height: 1px;
+  background: color-mix(in srgb, var(--c-tertiary) 40%, transparent);
+}
+
+/* ---------- ARROW CIRCLE (BRAND GOLD, unified across cards) ---------- */
+.cm-value-card__arrow {
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid color-mix(in srgb, var(--c-tertiary) 55%, transparent);
+  background: color-mix(in srgb, var(--c-tertiary) 14%, transparent);
+  border-radius: 50%;
+  font-size: 18px;
+  color: var(--c-tertiary);
+  transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+.cm-value-card:hover .cm-value-card__arrow {
+  transform: translateX(5px);
+  background: var(--c-tertiary);
+  color: #fff;
+  border-color: var(--c-tertiary);
+}
+
+/* ---------- BOTTOM STATEMENT (unchanged) ---------- */
+.cm-about-values__statement {
+  max-width: 850px;
+  margin: 105px auto 0;
+  text-align: center;
+}
+.cm-about-values__statement p {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(28px, 4vw, 48px);
+  line-height: 1.3;
+  font-style: italic;
+  color: rgba(255,255,255,0.82);
+}
+
+/* ---------- TABLET ---------- */
+@media (max-width: 1100px) {
+  .cm-about-values__inner { width: min(100% - 60px, 900px); padding: 100px 0 120px; }
+  .cm-about-values__header { grid-template-columns: 1fr; gap: 30px; margin-bottom: 65px; }
+  .cm-about-values__intro { max-width: 700px; }
+  .cm-about-values__grid { grid-template-columns: 1fr 1fr; gap: 18px; }
+  .cm-value-card:nth-child(1), .cm-value-card:nth-child(2), .cm-value-card:nth-child(3), .cm-value-card:nth-child(4) { margin-top: 0; }
+  .cm-value-card:nth-child(2) { margin-top: 55px; }
+  .cm-value-card:nth-child(4) { margin-top: 55px; }
+}
+
+/* ---------- MOBILE ---------- */
+@media (max-width: 700px) {
+  .cm-about-values__inner { width: calc(100% - 40px); padding: 80px 0 90px; }
+  .cm-about-values__header { margin-bottom: 50px; }
+  .cm-about-values__label { font-size: 10px; letter-spacing: 2px; }
+  .cm-about-values__heading { font-size: clamp(55px, 15vw, 75px); letter-spacing: -4px; }
+  .cm-about-values__intro { font-size: 15px; line-height: 1.7; }
+  .cm-about-values__grid { grid-template-columns: 1fr; gap: 16px; }
+  .cm-value-card { min-height: 410px !important; margin: 0 !important; padding: 30px; }
+  .cm-value-card:nth-child(2), .cm-value-card:nth-child(4) { transform: translateX(15px); width: calc(100% - 15px); }
+  .cm-value-card__number { font-size: 140px; }
+  .cm-value-card__title { font-size: 42px; }
+  .cm-about-values__statement { margin-top: 70px; }
+  .cm-about-values__statement p { font-size: 29px; }
+}
+
+/* ---------- SMALL PHONES ---------- */
+@media (max-width: 480px) {
+  .cm-about-values__inner { width: calc(100% - 30px); padding: 70px 0 75px; }
+  .cm-value-card { min-height: 390px !important; padding: 27px; }
+  .cm-value-card:nth-child(2), .cm-value-card:nth-child(4) { transform: translateX(8px); width: calc(100% - 8px); }
+  .cm-value-card__title { font-size: 38px; }
+  .cm-value-card__description { font-size: 13px; }
+  .cm-about-values__statement p { font-size: 25px; }
+}

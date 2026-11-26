@@ -1,0 +1,39 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Replace with YOUR user id: Firebase console → Authentication → Users → "User UID"
+    function isAdmin() {
+      return request.auth != null && request.auth.uid == 'PASTE_ADMIN_UID';
+    }
+
+    // site settings (theme, text, layout, pop-up): public read, admin write
+    match /site/{doc} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    // articles, podcasts, videos, audio, events: visitors only see published items
+    match /{col}/{id} {
+      allow read: if col in ['articles','podcasts','videos','audio','events']
+                  && (resource.data.status == 'published' || isAdmin());
+      allow write: if col in ['articles','podcasts','videos','audio','events'] && isAdmin();
+    }
+
+    // newsletter sign-ups: anyone can add one (not read or change); admin manages them
+    match /subscribers/{id} {
+      allow create: if request.resource.data.keys().hasOnly(['firstName','email','createdAt'])
+                    && request.resource.data.email is string
+                    && request.resource.data.email.size() < 201;
+      allow read, update, delete: if isAdmin();
+    }
+
+    // contact messages: same idea
+    match /messages/{id} {
+      allow create: if request.resource.data.keys().hasOnly(['name','email','message','createdAt'])
+                    && request.resource.data.message is string
+                    && request.resource.data.message.size() < 5001;
+      allow read, update, delete: if isAdmin();
+    }
+  }
+}

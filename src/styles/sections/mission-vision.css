@@ -1,0 +1,422 @@
+
+/* =========================================================
+   RESET
+========================================================= */
+
+.cm-mission-vision,
+.cm-mission-vision * {
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   MAIN SECTION
+========================================================= */
+
+.cm-mission-vision {
+  position: relative;
+  width: 100%;
+  min-height: 575px;
+  background: var(--c-primary);
+  color: #fff;
+  overflow: hidden;
+  font-family: var(--font-sans);
+}
+
+/* =========================================================
+   CHRIS IMAGE
+========================================================= */
+
+.cm-mission-vision__image {
+  position: absolute;
+
+  z-index: 1;
+
+  top: 0;
+  right: 0;
+  bottom: 0;
+
+  width: 65%;
+
+  background-image:
+    url("https://chrismene.org/wp-content/uploads/2026/09/Gemini_Generated_Image_914hlv914hlv914h.jpg");
+
+  background-size: cover;
+
+  background-position:
+    center right;
+
+  /*filter:*/
+  /*  grayscale(100%)*/
+  /*  contrast(1.05)*/
+  /*  brightness(.78);*/
+
+  transform: scale(1.01);
+}
+
+
+/* =========================================================
+   IMAGE → BLACK BLEND
+========================================================= */
+
+.cm-mission-vision__image::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--c-primary) 0%,
+      color-mix(in srgb, var(--c-primary) 98%, transparent) 8%,
+      color-mix(in srgb, var(--c-primary) 78%, transparent) 24%,
+      color-mix(in srgb, var(--c-primary) 35%, transparent) 43%,
+      color-mix(in srgb, var(--c-primary) 5%, transparent) 65%,
+      transparent 100%
+    );
+}
+
+
+/* bottom blend */
+
+.cm-mission-vision__image::after {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      0deg,
+      color-mix(in srgb, var(--c-primary) 25%, transparent),
+      transparent 25%
+    );
+}
+
+
+/* =========================================================
+   CONTENT CONTAINER
+========================================================= */
+
+.cm-mission-vision__container {
+  position: relative;
+
+  z-index: 5;
+
+  width: 100%;
+
+  max-width: 1400px;
+
+  min-height: 575px;
+
+  margin: 0 auto;
+
+  padding:
+    0 40px;
+
+  display: flex;
+
+  align-items: center;
+}
+
+
+/* =========================================================
+   CONTENT AREA
+========================================================= */
+
+.cm-mission-vision__content {
+  width: 58%;
+
+  display: grid;
+
+  grid-template-columns:
+    1fr
+    1fr;
+
+  column-gap: 65px;
+
+  align-items: start;
+}
+
+
+/* =========================================================
+   INDIVIDUAL BLOCK
+========================================================= */
+
+.cm-mission-vision__block {
+  max-width: 370px;
+}
+
+
+/* Vision sits slightly lower,
+   just like the reference */
+
+.cm-mission-vision__block--vision {
+  margin-top: 14px;
+}
+
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+.cm-mission-vision__heading {
+  margin: 0 0 20px;
+
+  color: #fff;
+
+  font-size: 31px;
+
+  line-height: 1.1;
+
+  font-weight: 400;
+
+  letter-spacing: -.035em;
+}
+
+
+/* italic words */
+
+.cm-mission-vision__heading em {
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-style: italic;
+
+  font-weight: 400;
+
+  letter-spacing: -.02em;
+}
+
+
+/* =========================================================
+   BODY TEXT
+========================================================= */
+
+.cm-mission-vision__text {
+  margin: 0;
+
+  max-width: 350px;
+
+  color: rgba(255,255,255,.88);
+
+  font-size: 15px;
+
+  line-height: 1.55;
+
+  font-weight: 400;
+}
+
+
+/* =========================================================
+   SMALL GOLD ACCENT
+========================================================= */
+
+.cm-mission-vision__block--mission::after {
+  content: "";
+
+  display: block;
+
+  width: 24px;
+  height: 1px;
+
+  margin-top: 23px;
+
+  background: var(--c-tertiary);
+}
+
+
+/* =========================================================
+   DESKTOP — LARGE SCREENS
+========================================================= */
+
+@media (min-width: 1500px) {
+
+  .cm-mission-vision {
+    min-height: 610px;
+  }
+
+  .cm-mission-vision__container {
+    min-height: 610px;
+
+    max-width: 1500px;
+  }
+
+  .cm-mission-vision__content {
+    column-gap: 80px;
+  }
+
+  .cm-mission-vision__heading {
+    font-size: 34px;
+  }
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+  .cm-mission-vision {
+    min-height: 540px;
+  }
+
+  .cm-mission-vision__image {
+    width: 68%;
+
+    background-position: center right;
+  }
+
+  .cm-mission-vision__container {
+    min-height: 540px;
+
+    padding:
+      0 35px;
+  }
+
+  .cm-mission-vision__content {
+    width: 64%;
+
+    column-gap: 35px;
+  }
+
+  .cm-mission-vision__heading {
+    font-size: 27px;
+  }
+
+  .cm-mission-vision__text {
+    font-size: 14px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 720px) {
+
+  .cm-mission-vision {
+    min-height: auto;
+
+    padding-bottom: 55px;
+  }
+
+
+  /* Image becomes a proper background visual */
+
+  .cm-mission-vision__image {
+    position: absolute;
+
+    top: 0;
+    right: 0;
+
+    width: 100%;
+
+    height: 430px;
+
+    background-position:
+      center top;
+
+    filter:
+      grayscale(100%)
+      contrast(1.05)
+      brightness(.72);
+  }
+
+
+  /* Stronger black fade */
+
+  .cm-mission-vision__image::before {
+    background:
+      linear-gradient(
+        180deg,
+        color-mix(in srgb, var(--c-primary) 10%, transparent) 0%,
+        color-mix(in srgb, var(--c-primary) 18%, transparent) 25%,
+        color-mix(in srgb, var(--c-primary) 75%, transparent) 65%,
+        var(--c-primary) 100%
+      );
+  }
+
+
+  .cm-mission-vision__image::after {
+    display: none;
+  }
+
+
+  .cm-mission-vision__container {
+    min-height: auto;
+
+    padding:
+      350px 25px 0;
+  }
+
+
+  .cm-mission-vision__content {
+    width: 100%;
+
+    display: block;
+  }
+
+
+  .cm-mission-vision__block {
+    max-width: 520px;
+
+    margin-bottom: 45px;
+  }
+
+
+  .cm-mission-vision__block--vision {
+    margin-top: 0;
+  }
+
+
+  .cm-mission-vision__heading {
+    font-size: 29px;
+
+    margin-bottom: 16px;
+  }
+
+
+  .cm-mission-vision__text {
+    max-width: 480px;
+
+    font-size: 15px;
+
+    line-height: 1.65;
+  }
+}
+
+
+/* =========================================================
+   SMALL PHONES
+========================================================= */
+
+@media (max-width: 420px) {
+
+  .cm-mission-vision__image {
+    height: 380px;
+
+    background-position:
+      63% top;
+  }
+
+  .cm-mission-vision__container {
+    padding:
+      315px 20px 0;
+  }
+
+  .cm-mission-vision__heading {
+    font-size: 27px;
+  }
+
+  .cm-mission-vision__text {
+    font-size: 14px;
+  }
+}

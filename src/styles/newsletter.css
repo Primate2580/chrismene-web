@@ -1,0 +1,185 @@
+/* =========================================================
+   NEWSLETTER — reference: black band, bold italic headline,
+   full-height B&W portrait on the right fading into the black
+========================================================= */
+.news {
+  position: relative;
+  overflow: hidden;
+  background: var(--c-primary);
+  color: var(--c-on-primary);
+  min-height: 460px;
+  display: flex;
+  align-items: center;
+}
+
+.news__photo {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 78%;
+  z-index: 0;
+}
+
+.news__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: grayscale(1) brightness(0.62) contrast(1.05);
+}
+
+/* fade the photo into the black on the left, and keep the very bottom dark */
+.news__photo::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    var(--c-primary) 0%,
+    color-mix(in srgb, var(--c-primary) 94%, transparent) 14%,
+    color-mix(in srgb, var(--c-primary) 55%, transparent) 34%,
+    color-mix(in srgb, var(--c-primary) 12%, transparent) 58%,
+    transparent 100%
+  );
+}
+
+.news__inner {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1340px;
+  margin: 0 auto;
+  padding: 70px 24px;
+}
+
+.news__copy {
+  max-width: 760px;
+}
+
+.news__heading {
+  margin: 0 0 30px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: clamp(44px, 4.4vw, 70px);
+  font-weight: 700;
+  line-height: 0.98;
+  letter-spacing: -0.02em;
+}
+
+.news__heading em {
+  font-style: italic;
+  font-weight: 700;
+}
+
+.news__text {
+  margin: 0 0 26px;
+  max-width: 740px;
+  font-size: 17px;
+  line-height: 1.45;
+  letter-spacing: -0.1px;
+}
+
+.news__form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.news__form input {
+  width: 251px;
+  height: 37px;
+  padding: 0 14px;
+  border: 1px solid #6a6a6a;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--c-primary) 35%, transparent);
+  color: var(--c-on-primary);
+  font: 400 13px var(--font-sans);
+}
+
+.news__form input::placeholder {
+  color: #c4c4c4;
+}
+
+.news__form input:focus {
+  outline: none;
+  border-color: var(--c-on-primary);
+}
+
+.news__form button {
+  height: 37px;
+  padding: 0 70px;
+  border: 0;
+  border-radius: var(--btn-radius);
+  background: var(--btn-bg);
+  color: var(--btn-text);
+  font: 500 13px var(--font-sans);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.2s ease;
+}
+
+.news__form button:hover {
+  filter: brightness(0.9);
+}
+
+.news__form button:disabled {
+  opacity: 0.7;
+  cursor: default;
+}
+
+.news__msg {
+  margin: 14px 0 0;
+  font-size: 14px;
+}
+
+.news__msg--ok {
+  color: #9be3a6;
+}
+
+.news__msg--error {
+  color: #ff9d9d;
+}
+
+/* ---------- tablet / mobile: text first, photo underneath ---------- */
+@media (max-width: 900px) {
+  .news {
+    display: block;
+    min-height: 0;
+  }
+
+  .news__photo {
+    position: relative;
+    width: 100%;
+    height: 380px;
+    order: 2;
+  }
+
+  .news__photo::before {
+    background: linear-gradient(180deg, var(--c-primary) 0%, color-mix(in srgb, var(--c-primary) 40%, transparent) 30%, transparent 70%);
+  }
+
+  .news__inner {
+    padding: 56px 24px 24px;
+  }
+
+  .news__form {
+    flex-direction: column;
+  }
+
+  .news__form input,
+  .news__form button {
+    width: 100%;
+  }
+
+  .news__heading {
+    font-size: 44px;
+  }
+
+  .news {
+    display: flex;
+    flex-direction: column;
+  }
+  .news__inner {
+    order: 1;
+  }
+}

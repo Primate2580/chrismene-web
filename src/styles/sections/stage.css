@@ -1,0 +1,551 @@
+
+/* =========================================================
+   SECTION
+========================================================= */
+
+.cm-stage-section,
+.cm-stage-section * {
+  box-sizing: border-box;
+}
+
+.cm-stage-section {
+  width: 100%;
+  background: #fff;
+  color: var(--c-ink);
+  padding: 90px 60px 100px;
+  font-family: var(--font-sans);
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.cm-stage-container {
+  max-width: 1360px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  gap: 40px;
+
+  align-items: start;
+}
+
+
+/* =========================================================
+   LEFT SIDE
+========================================================= */
+
+.cm-stage-left {
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* =========================================================
+   BLACK EDITORIAL CARD
+========================================================= */
+
+.cm-stage-card {
+  position: relative;
+
+  min-height: 320px;
+
+  padding: 55px 48px;
+
+  background: var(--c-primary);
+
+  color: #fff;
+
+  border-radius: 25px;
+
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+
+/* subtle oversized circle */
+
+.cm-stage-card::before {
+  content: "";
+
+  position: absolute;
+
+  width: 300px;
+  height: 300px;
+
+  right: -130px;
+  top: -150px;
+
+  border: 1px solid rgba(255,255,255,0.12);
+
+  border-radius: 50%;
+}
+
+
+/* second decorative circle */
+
+.cm-stage-card::after {
+  content: "";
+
+  position: absolute;
+
+  width: 180px;
+  height: 180px;
+
+  right: -70px;
+  top: -90px;
+
+  border: 1px solid rgba(255,255,255,0.06);
+
+  border-radius: 50%;
+}
+
+
+/* =========================================================
+   ARROW CIRCLE
+========================================================= */
+
+.cm-stage-arrow {
+  position: absolute;
+
+  top: 58px;
+  right: 48px;
+
+  width: 55px;
+  height: 55px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #fff;
+  color: var(--c-ink);
+
+  border-radius: 50%;
+
+  font-size: 23px;
+
+  line-height: 1;
+
+  transition:
+    transform .3s ease,
+    background .3s ease;
+}
+
+.cm-stage-card:hover .cm-stage-arrow {
+  transform: translate(4px, -4px);
+
+  background: #e9e5db;
+}
+
+
+/* =========================================================
+   CARD TITLE
+========================================================= */
+
+.cm-stage-title {
+  position: relative;
+  z-index: 2;
+
+  margin: 0;
+
+  max-width: 500px;
+
+  font-size: clamp(40px, 4vw, 60px);
+
+  line-height: 1;
+
+  letter-spacing: -0.045em;
+
+  font-weight: 400;
+}
+
+.cm-stage-title em {
+  display: block;
+
+  margin-top: 10px;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 0.82em;
+
+  font-style: italic;
+
+  letter-spacing: -0.025em;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.cm-stage-description {
+  margin: 20px 0 0;
+
+  max-width: 620px;
+
+  font-size: 16px;
+
+  line-height: 1.65;
+
+  color: #292929;
+}
+
+
+/* =========================================================
+   CTA
+========================================================= */
+
+.cm-stage-button {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: fit-content;
+
+  margin-top: 28px;
+
+  padding: 15px 27px;
+
+  background: var(--btn-alt-bg);
+
+  color: var(--btn-alt-text);
+
+  border-radius: var(--btn-radius);
+
+  text-decoration: none;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.01em;
+
+  transition:
+    transform .25s ease,
+    background .25s ease;
+}
+
+.cm-stage-button:hover {
+  background: var(--c-quaternary);
+
+  color: #fff;
+
+  transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   RIGHT — VIDEO / IMAGE
+========================================================= */
+
+.cm-stage-media {
+  position: relative;
+
+  width: 100%;
+
+  aspect-ratio: 1.45 / 1;
+
+  overflow: hidden;
+
+  border-radius: 25px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #202522,
+      #0d1110
+    );
+
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   IMAGE
+========================================================= */
+
+.cm-stage-image {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  display: block;
+
+  transition:
+    transform .7s ease,
+    filter .5s ease;
+}
+
+.cm-stage-media:hover .cm-stage-image {
+  transform: scale(1.035);
+
+  filter: brightness(.88);
+}
+
+
+/* =========================================================
+   DARK IMAGE OVERLAY
+========================================================= */
+
+.cm-stage-media::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(0,0,0,.03),
+      rgba(0,0,0,.28)
+    );
+
+  z-index: 2;
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   PLAY BUTTON
+========================================================= */
+
+.cm-stage-play {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+
+  transform: translate(-50%, -50%);
+
+  width: 74px;
+  height: 74px;
+
+  border-radius: 50%;
+
+  background: #fff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 5;
+
+  box-shadow:
+    0 12px 35px rgba(0,0,0,.25);
+
+  transition:
+    transform .3s ease,
+    width .3s ease,
+    height .3s ease;
+}
+
+
+/* play triangle */
+
+.cm-stage-play::before {
+  content: "";
+
+  margin-left: 5px;
+
+  width: 0;
+  height: 0;
+
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 15px solid var(--c-ink);
+}
+
+.cm-stage-media:hover .cm-stage-play {
+  width: 82px;
+  height: 82px;
+
+  transform: translate(-50%, -50%) scale(1.02);
+}
+
+
+/* =========================================================
+   MEDIA LABEL
+========================================================= */
+
+.cm-stage-media-label {
+  position: absolute;
+
+  left: 25px;
+  bottom: 22px;
+
+  z-index: 5;
+
+  padding: 8px 13px;
+
+  border: 1px solid rgba(255,255,255,.35);
+
+  border-radius: 30px;
+
+  background: rgba(0,0,0,.35);
+
+  backdrop-filter: blur(8px);
+
+  color: #fff;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  letter-spacing: .16em;
+
+  text-transform: uppercase;
+}
+
+
+/* =========================================================
+   SMALL TOP LABEL
+========================================================= */
+
+.cm-stage-eyebrow {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  margin: 0 0 20px;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  letter-spacing: .2em;
+
+  text-transform: uppercase;
+
+  color: var(--c-quaternary);
+}
+
+.cm-stage-eyebrow::before {
+  content: "";
+
+  width: 30px;
+  height: 1px;
+
+  background: var(--c-tertiary);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 950px) {
+
+  .cm-stage-section {
+    padding: 75px 35px 85px;
+  }
+
+  .cm-stage-container {
+    grid-template-columns: 1fr;
+
+    gap: 45px;
+  }
+
+  .cm-stage-card {
+    min-height: 330px;
+  }
+
+  .cm-stage-media {
+    aspect-ratio: 1.65 / 1;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .cm-stage-section {
+    padding: 65px 20px 75px;
+  }
+
+  .cm-stage-container {
+    gap: 35px;
+  }
+
+  .cm-stage-card {
+    min-height: 300px;
+
+    padding: 40px 30px;
+
+    border-radius: 20px;
+  }
+
+  .cm-stage-arrow {
+    top: 30px;
+    right: 30px;
+
+    width: 48px;
+    height: 48px;
+  }
+
+  .cm-stage-title {
+    font-size: 43px;
+  }
+
+  .cm-stage-description {
+    font-size: 15px;
+
+    line-height: 1.7;
+  }
+
+  .cm-stage-media {
+    aspect-ratio: 1 / .82;
+
+    border-radius: 20px;
+  }
+
+  .cm-stage-play {
+    width: 62px;
+    height: 62px;
+  }
+
+  .cm-stage-media:hover .cm-stage-play {
+    width: 68px;
+    height: 68px;
+  }
+}
+
+
+/* =========================================================
+   SMALL PHONES
+========================================================= */
+
+@media (max-width: 400px) {
+
+  .cm-stage-card {
+    min-height: 275px;
+
+    padding: 35px 25px;
+  }
+
+  .cm-stage-title {
+    font-size: 38px;
+  }
+
+  .cm-stage-arrow {
+    right: 24px;
+  }
+}

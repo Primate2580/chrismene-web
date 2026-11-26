@@ -1,0 +1,140 @@
+
+  .pg-books {
+    background: #fff;
+    color: var(--c-ink);
+    padding: 80px 60px;
+  }
+  .pg-books-top {
+    max-width: 1400px;
+    margin: 0 auto 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .pg-books-heading {
+    font-size: 48px;
+    font-weight: 400;
+    margin: 0;
+  }
+  .pg-books-heading em {
+    font-style: italic;
+    font-family: Georgia, "Times New Roman", serif;
+  }
+  .pg-books-viewall {
+    border: 1.5px solid var(--c-ink);
+    border-radius: 40px;
+    padding: 14px 26px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--c-ink);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    white-space: nowrap;
+  }
+  .pg-books-viewall:hover {
+    background: var(--c-ink);
+    color: #fff;
+  }
+  .pg-books-row {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 380px 1fr;
+    gap: 70px;
+    align-items: start;
+  }
+  .pg-books-cover-wrap {
+    position: relative;
+  }
+  .pg-books-cover {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 340/460;
+    background: #eee
+      url("https://your-site.com/wp-content/uploads/shifts-book-cover.jpg")
+      center/cover no-repeat;
+    border: 1px solid #ddd;
+    box-shadow: 0 30px 50px -20px rgba(0, 0, 0, 0.35);
+    position: relative;
+  }
+  .pg-books-cover:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 10px;
+    background: linear-gradient(
+      180deg,
+      #7a1b4e,
+      #c8213f 35%,
+      #e8722a 65%,
+      #f4c21a
+    );
+  }
+  .pg-books-title {
+    font-size: 34px;
+    font-weight: 700;
+    line-height: 1.25;
+    margin: 0 0 24px;
+  }
+  .pg-books-text {
+    font-size: 15px;
+    line-height: 1.7;
+    color: #222;
+    margin: 0 0 20px;
+  }
+  .pg-books-list {
+    margin: 0 0 20px;
+    padding-left: 22px;
+  }
+  .pg-books-list li {
+    font-size: 15px;
+    line-height: 1.7;
+    color: #222;
+    margin-bottom: 6px;
+  }
+  .pg-books-list li b {
+    font-weight: 700;
+  }
+  .pg-books-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--btn-alt-bg);
+    color: var(--btn-alt-text);
+    border-radius: var(--btn-radius);
+    padding: 16px 30px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .pg-books-cta:hover {
+    background: #333;
+  }
+  @media (max-width: 900px) {
+    .pg-books {
+      padding: 50px 24px;
+    }
+    .pg-books-top {
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-bottom: 40px;
+    }
+    .pg-books-heading {
+      font-size: 34px;
+    }
+    .pg-books-row {
+      grid-template-columns: 1fr;
+      gap: 36px;
+    }
+    .pg-books-cover-wrap {
+      max-width: 280px;
+      margin: 0 auto;
+    }
+    .pg-books-title {
+      font-size: 26px;
+    }
+  }
